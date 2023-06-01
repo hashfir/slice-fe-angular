@@ -1,0 +1,33 @@
+<div class="main">
+    <div class="page-content">
+        <div class="header">
+            <div class="logo">
+                <h2>Logo</h2>
+            </div>
+            <div class="logo">
+                <h2>sign</h2>
+            </div>
+        </div>
+        <app-navbar></app-navbar>
+        <div class="split-data">
+            <div class="content1">
+                <div class="content-wrap">
+                    <div *ngFor="let data of summary">
+                        <app-card 
+                        [type]="data.type"
+                        [value]="data.value"
+                        [name]="data.name"
+                        ></app-card>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="content2">
+                dsadasd
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+</div>
