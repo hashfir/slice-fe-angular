@@ -130,46 +130,45 @@ export class DataService {
 
   getDataSummary() {
     const type1 = [
-      {name:'Reach',field:'reach'},
-      {name:'Impressions',field:'impressions'},
-      {name:'Followers',field:'followers'},
-      {name:'Click Rate (CTR)',field:'ctr'},
-      {name:'Total Clicks',field:'clicks'},
-      {name:'Percentage of Reach',field:'reachPercentage'},
-      {name:'Engagement Rate',field:'engagementRate'},
-      {name:'Total Engagements',field:'totalEngagements'}
+      { name: 'Reach', field: 'reach' },
+      { name: 'Impressions', field: 'impressions' },
+      { name: 'Followers', field: 'followers' },
+      { name: 'Click Rate (CTR)', field: 'ctr' },
+      { name: 'Total Clicks', field: 'clicks' },
+      { name: 'Percentage of Reach', field: 'reachPercentage' },
+      { name: 'Engagement Rate', field: 'engagementRate' },
+      { name: 'Total Engagements', field: 'totalEngagements' }
     ]
     const type2 = [
-      {name:'Cost per Reach',field:"cpr"},
-      {name:'Cost per View',field:"cpv"},
-      {name:'Cost per Impression',field:"cpi"},
-      {name:'Cost per Engagement',field:"cpe"}
+      { name: 'Cost per Reach', field: "cpr" },
+      { name: 'Cost per View', field: "cpv" },
+      { name: 'Cost per Impression', field: "cpi" },
+      { name: 'Cost per Engagement', field: "cpe" }
     ]
-    const datas : any = [];
+    const datas: any = [];
 
-    type1.forEach((dt,key) => {
+    type1.forEach((dt, key) => {
       datas.push({
         name: dt.name,
         type: 1,
         value: this.data.summary[dt.field] || 0
       });
     });
-    
-    type2.forEach((dt,key) => {
+
+    type2.forEach((dt, key) => {
       datas.push({
         name: dt.name,
         type: 2,
         value: this.data[dt.field] || 0
       });
     });
-    // const sortedDatas = Object.entries(datas)
-    //   .sort(([, a]: [any, any], [, b]: [any, any]) => a.type - b.type)
-    //   .reduce((acc:any, [key, value]) => {
-    //     acc[key] = value;
-    //     return acc;
-    //   }, {});
-    console.log(datas, "sortedDatas");
-return datas
-    // return this.data.summary;
+    return datas
+  }
+
+  getDataTable() {
+    return this.data.individualList
+  }
+  searchTable(elem: string) {
+    return this.data.individualList.filter((el: any) => el.creatorName.toLowerCase().includes(elem.toLowerCase()))
   }
 }

@@ -13,11 +13,7 @@
             <div class="content1">
                 <div class="content-wrap">
                     <div *ngFor="let data of summary">
-                        <app-card 
-                        [type]="data.type"
-                        [value]="data.value"
-                        [name]="data.name"
-                        ></app-card>
+                        <app-card [type]="data.type" [value]="data.value" [name]="data.name"></app-card>
                     </div>
 
 
@@ -25,6 +21,15 @@
             </div>
             <div class="content2">
                 dsadasd
+            </div>
+        </div>
+        <div class="table-session">
+            <h3>
+                Individual Creator Performance
+            </h3>
+            <input type="text" [(ngModel)]="searchText" placeholder="Search" (input)="search()">
+            <div class="gapTable">
+                <app-table [row]="rowTable" [column]="columnTable"></app-table>
             </div>
         </div>
         <div>

@@ -7,11 +7,45 @@ import { DataService } from '../../service/data.service';
 })
 export class MainPageComponent {
   summary: any = [];
-  constructor(private getdata: DataService) { }
+  rowTable : any =[];
+  searchText: any = '';
+  columnTable: any = [
+    {
+      name: 'Creator',
+      field: "creatorName"
+    },
+    {
+      name: 'Post Type',
+      field:'postType'
+    },
+    {
+      name: 'Impressions',
+      field:'impressions'
+    },
+    {
+      name: 'Views',
+      field:'views'
+    },
+    {
+      name: 'Clicks',
+      field:'clicks'
+    }
+
+  ]
+  constructor(private getdata: DataService) { 
+    this.rowTable = this.getdata.getDataTable()
+  }
 
   ngOnInit() {
     this.summary = this.getdata.getDataSummary();
     console.log(this.summary, "summarysummary");
-    
+
+  }
+
+  search() {
+    this.rowTable =  this.getdata.searchTable(this.searchText)
+    // Perform the search operation using the this.searchText value
+    // You can access input values, call API, or manipulate data as needed
+    // Example: console.log('Search button clicked', this.searchText);
   }
 }
