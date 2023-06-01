@@ -20,7 +20,11 @@
                 </div>
             </div>
             <div class="content2">
-                dsadasd
+                <app-bar-chart
+                [chartLabel] = "'Target Vs Created Media'"
+                [label]="this.chart.label" 
+                [value]="this.chart.value"
+                ></app-bar-chart>
             </div>
         </div>
         <div class="table-session">

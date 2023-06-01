@@ -212,8 +212,14 @@ export class DataService {
     return this.data.individualList.filter((el: any) => el.creatorName.toLowerCase().includes(elem.toLowerCase()))
   }
   selectTable(elem: string) {
-    console.log(elem,'elemelem');
-    
+    console.log(elem, 'elemelem');
+
     return this.data.individualList.filter((el: any) => el.postType.toLowerCase().includes(elem.toLowerCase()))
+  }
+  getDataChart() {
+    const datachart = this.data.summary.chartTargetVsActualImpression
+    const label =["Target", "Created Media",]
+    const value = [datachart.targetER,  datachart.realER]
+    return {label, value}
   }
 }

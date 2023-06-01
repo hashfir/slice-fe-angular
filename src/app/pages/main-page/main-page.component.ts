@@ -7,6 +7,7 @@ import { DataService } from '../../service/data.service';
 })
 export class MainPageComponent {
   summary: any = [];
+  chart: any = [];
   rowTable: any = [];
   searchText: any = '';
   columnTable: any = [
@@ -40,7 +41,8 @@ export class MainPageComponent {
 
   ngOnInit() {
     this.summary = this.getdata.getDataSummary();
-    console.log(this.summary, "summarysummary");
+    this.chart = this.getdata.getDataChart();
+    console.log(this.chart, "chartchart");
 
   }
 

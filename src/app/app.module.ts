@@ -8,6 +8,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { CardComponent } from './components/card/card.component';
 import { TableComponent } from './components/table/table.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CardComponent,
     TableComponent,
     NavbarComponent,
+    BarChartComponent,
   ],
   imports: [
     BrowserModule,
