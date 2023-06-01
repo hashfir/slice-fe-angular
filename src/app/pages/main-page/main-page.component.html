@@ -27,7 +27,15 @@
             <h3>
                 Individual Creator Performance
             </h3>
-            <input type="text" [(ngModel)]="searchText" placeholder="Search" (input)="search()">
+            <div class="flex">
+                <input type="text" [(ngModel)]="searchText" placeholder="Search" (input)="search()">
+                <div>
+                    <select [(ngModel)]="selectedOption" (input)="select($event)">
+                        <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="gapTable">
                 <app-table [row]="rowTable" [column]="columnTable"></app-table>
             </div>

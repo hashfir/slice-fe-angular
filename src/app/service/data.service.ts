@@ -42,6 +42,46 @@ export class DataService {
       {
         "proposalId": "0a84075e-71b8-44cc-8a2d-a156cad46d3s",
         "creatorId": "9ac38b5f-22a1-4f22-b01d-a22da96bf31d",
+        "creatorName": "Dara Loemongga 1",
+        "channel": "instagram",
+        "postType": "reels",
+        "followersCount": 2180,
+        "engagementRate": 0,
+        "cpr": 0,
+        "cpe": 0,
+        "price": 0,
+        "reach": 0,
+        "impressions": 0,
+        "views": 0,
+        "likes": 0,
+        "comment": 0,
+        "shares": 0,
+        "clicks": 0,
+        "platformContentId": null
+      },
+      {
+        "proposalId": "0a84075e-71b8-44cc-8a2d-a156cad46d3s",
+        "creatorId": "9ac38b5f-22a1-4f22-b01d-a22da96bf31d",
+        "creatorName": "Dara Loemongga 2",
+        "channel": "instagram",
+        "postType": "reels",
+        "followersCount": 2180,
+        "engagementRate": 0,
+        "cpr": 0,
+        "cpe": 0,
+        "price": 0,
+        "reach": 0,
+        "impressions": 0,
+        "views": 0,
+        "likes": 0,
+        "comment": 0,
+        "shares": 0,
+        "clicks": 0,
+        "platformContentId": null
+      },
+      {
+        "proposalId": "0a84075e-71b8-44cc-8a2d-a156cad46d3s",
+        "creatorId": "9ac38b5f-22a1-4f22-b01d-a22da96bf31d",
         "creatorName": "Dara Loemongga",
         "channel": "instagram",
         "postType": "post",
@@ -170,5 +210,10 @@ export class DataService {
   }
   searchTable(elem: string) {
     return this.data.individualList.filter((el: any) => el.creatorName.toLowerCase().includes(elem.toLowerCase()))
+  }
+  selectTable(elem: string) {
+    console.log(elem,'elemelem');
+    
+    return this.data.individualList.filter((el: any) => el.postType.toLowerCase().includes(elem.toLowerCase()))
   }
 }

@@ -7,7 +7,7 @@ import { DataService } from '../../service/data.service';
 })
 export class MainPageComponent {
   summary: any = [];
-  rowTable : any =[];
+  rowTable: any = [];
   searchText: any = '';
   columnTable: any = [
     {
@@ -16,23 +16,25 @@ export class MainPageComponent {
     },
     {
       name: 'Post Type',
-      field:'postType'
+      field: 'postType'
     },
     {
       name: 'Impressions',
-      field:'impressions'
+      field: 'impressions'
     },
     {
       name: 'Views',
-      field:'views'
+      field: 'views'
     },
     {
       name: 'Clicks',
-      field:'clicks'
+      field: 'clicks'
     }
 
   ]
-  constructor(private getdata: DataService) { 
+  options: string[] = ['Reels', 'Post'];
+  selectedOption: string = 'Post';
+  constructor(private getdata: DataService) {
     this.rowTable = this.getdata.getDataTable()
   }
 
@@ -43,9 +45,14 @@ export class MainPageComponent {
   }
 
   search() {
-    this.rowTable =  this.getdata.searchTable(this.searchText)
+    this.rowTable = this.getdata.searchTable(this.searchText)
     // Perform the search operation using the this.searchText value
     // You can access input values, call API, or manipulate data as needed
     // Example: console.log('Search button clicked', this.searchText);
+  }
+  select(event: any) {
+    console.log(this.selectedOption, event, "this.selectedOption");
+
+    this.rowTable = this.getdata.selectTable(event.target.value)
   }
 }
