@@ -22,7 +22,7 @@
   .pagination {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 16px;
   
     button {
@@ -44,7 +44,38 @@
         cursor: not-allowed;
       }
     }
+    .pagination-button {
+      margin-right: 5px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
   
+      &:disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
+    }
+  
+    .pagination-info {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+  
+
+      label {
+        margin-right: 5px;
+        font-size: 14px;
+      }
+  
+      select {
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    
     span {
       font-size: 14px;
       margin: 0 8px;

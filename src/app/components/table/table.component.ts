@@ -22,15 +22,31 @@ export class TableComponent {
     return this.row.slice(startIndex, endIndex);
   }
 
-  previousPage() {
-    if (this.currentPage > 1) {
-      this.currentPage--;
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
     }
   }
 
-  nextPage() {
-    if (this.currentPage < this.totalPages) {
-      this.currentPage++;
-    }
+  goToPreviousPage(): void {
+    this.goToPage(this.currentPage - 1);
   }
+
+  goToNextPage(): void {
+    this.goToPage(this.currentPage + 1);
+  }
+
+  goToFirstPage(): void {
+    this.goToPage(1);
+  }
+
+  goToLastPage(): void {
+    this.goToPage(this.totalPages);
+  }
+  selectTotalItem(event:any): void {
+    console.log(event, "masuk");
+    
+    this.rowsPerPage = event;
+  }
+  
 }
