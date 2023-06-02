@@ -1,35 +1,37 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th *ngFor="let column of column">{{ column.name }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let row of displayedRows">
-      <td *ngFor="let column of column">{{ row[column.field] }}</td>
-    </tr>
-  </tbody>
-</table>
-<div class="pagination">
-  <div>
-    <span>Showing {{((this.currentPage - 1) * this.rowsPerPage)+1}} to {{ displayedRows.length + ((this.currentPage - 1) * this.rowsPerPage)}} of
-      {{this.row.length}} entries</span>
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let column of column">{{ column.name }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of displayedRows">
+        <td *ngFor="let column of column">{{ row[column.field] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <div>
+      <span>Showing {{((this.currentPage - 1) * this.rowsPerPage)+1}} to {{ displayedRows.length + ((this.currentPage - 1) * this.rowsPerPage)}} of
+        {{this.row.length}} entries</span>
+    </div>
+    <div>
+      <button class="pagination-button" [disabled]="currentPage === 1" (click)="goToFirstPage()"><<</button>
+      <button class="pagination-button" [disabled]="currentPage === 1" (click)="goToPreviousPage()"><</button>
+      <span>{{ currentPage }}</span>
+      <button class="pagination-button" [disabled]="currentPage === totalPages" (click)="goToNextPage()">></button>
+      <button class="pagination-button" [disabled]="currentPage === totalPages" (click)="goToLastPage()">>></button>
+      <select id="perPage" [(ngModel)]="rowsPerPage" (ngModelChange)="selectTotalItem($event)">
+        <option [value]="3">3</option>
+        <option [value]="5">5</option>
+      </select>
+    </div>
+  
+    <!-- <div>
+      <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>{{ currentPage }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div> -->
   </div>
-  <div>
-    <button class="pagination-button" [disabled]="currentPage === 1" (click)="goToFirstPage()"><<</button>
-    <button class="pagination-button" [disabled]="currentPage === 1" (click)="goToPreviousPage()"><</button>
-    <span>{{ currentPage }}</span>
-    <button class="pagination-button" [disabled]="currentPage === totalPages" (click)="goToNextPage()">></button>
-    <button class="pagination-button" [disabled]="currentPage === totalPages" (click)="goToLastPage()">>></button>
-    <select id="perPage" [(ngModel)]="rowsPerPage" (ngModelChange)="selectTotalItem($event)">
-      <option [value]="3">3</option>
-      <option [value]="5">5</option>
-    </select>
-  </div>
-
-  <!-- <div>
-    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
-    <span>{{ currentPage }}</span>
-    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
-  </div> -->
 </div>

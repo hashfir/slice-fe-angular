@@ -33,11 +33,9 @@
             </h3>
             <div class="flex">
                 <input type="text" [(ngModel)]="searchText" placeholder="Search" (input)="search()">
-                <div>
-                    <select [(ngModel)]="selectedOption" (input)="select($event)">
-                        <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-                    </select>
-                </div>
+                <select [(ngModel)]="selectedOption" (input)="select($event)">
+                    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+                </select>
             </div>
 
             <div class="gapTable">
