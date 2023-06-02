@@ -212,8 +212,6 @@ export class DataService {
     return this.data.individualList.filter((el: any) => el.creatorName.toLowerCase().includes(elem.toLowerCase()))
   }
   selectTable(elem: string) {
-    console.log(elem, 'elemelem');
-
     return this.data.individualList.filter((el: any) => el.postType.toLowerCase().includes(elem.toLowerCase()))
   }
   getDataChart() {

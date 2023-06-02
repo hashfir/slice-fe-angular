@@ -85,7 +85,6 @@ select:focus {
 
 
 @media screen and (max-width: 1172px) {
-  // Add your responsive styles here
   .content1 {
     width: 100%;
   }
@@ -99,9 +98,6 @@ select:focus {
   input {
     width: 50% !important;
   }
-  // .select-container {
-  //   width: 50% !important;
-  // }
   select{
     width: 50% !important;
   }

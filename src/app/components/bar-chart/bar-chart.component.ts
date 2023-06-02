@@ -22,7 +22,6 @@ export class BarChartComponent {
     const data = {
       labels: labels,
       datasets: [{
-        // label: ['targetER', 'targetER2'],
         data: this.value,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',

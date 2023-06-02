@@ -41,20 +41,12 @@ export class MainPageComponent {
 
   ngOnInit() {
     this.summary = this.getdata.getDataSummary();
-    this.chart = this.getdata.getDataChart();
-    console.log(this.chart, "chartchart");
-
-  }
+    this.chart = this.getdata.getDataChart();  }
 
   search() {
     this.rowTable = this.getdata.searchTable(this.searchText)
-    // Perform the search operation using the this.searchText value
-    // You can access input values, call API, or manipulate data as needed
-    // Example: console.log('Search button clicked', this.searchText);
   }
   select(event: any) {
-    console.log(this.selectedOption, event, "this.selectedOption");
-
     this.rowTable = this.getdata.selectTable(event.target.value)
   }
 }
